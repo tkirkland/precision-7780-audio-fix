@@ -25,6 +25,17 @@ and SOF firmware packages.
 
 The package is written to `dist/`.
 
+## GitHub Actions
+
+The `Build Debian package` workflow can be started manually from the
+repository's **Actions** tab.
+
+- Leave `publish_release` disabled to build, validate, checksum, and upload the
+  `.deb` as a workflow artifact.
+- Enable `publish_release` and provide a tag such as `v1.0.1` to create a
+  release. If the release already exists, the workflow replaces its `.deb` and
+  checksum assets.
+
 ## Install
 
 Ensure Debian sources include `non-free-firmware`, then run:
