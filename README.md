@@ -3,6 +3,9 @@
 Debian package that forces the Intel SOF driver for the Dell Precision 7780
 SoundWire audio interface and digital microphone array.
 
+This is an unofficial community workaround. It is not provided, supported, or
+endorsed by Dell.
+
 On affected systems, Linux can auto-select the legacy HDA driver. Speakers may
 appear, but the internal microphone is exposed as an incorrect analog source
 and can return saturated samples. This package installs:
@@ -49,3 +52,15 @@ The DSP driver value should be `3`.
 
 This package is intentionally model-specific. Do not install it on unrelated
 hardware without confirming that forcing the Intel SOF driver is appropriate.
+
+## Official Dell references
+
+Dell lists Ubuntu 22.04 LTS and Red Hat Enterprise Linux 9.2 as supported
+operating systems for the Precision 7780:
+
+- [Precision 7780 supported operating systems](https://www.dell.com/support/home/en-us/drivers/supportedos/precision-17-7780-laptop)
+- [Precision 7780 drivers and downloads](https://www.dell.com/support/product-details/en-us/product/precision-17-7780-laptop/drivers)
+
+Dell's download catalog does not currently provide a model-specific Linux
+audio package. Supported Linux installations rely on the distribution kernel,
+Intel SOF firmware, ALSA/UCM configuration, and userspace audio stack.
