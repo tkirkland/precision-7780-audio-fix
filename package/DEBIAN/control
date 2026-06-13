@@ -1,0 +1,13 @@
+Package: precision-7780-audio-fix
+Version: 1.0.0-1
+Section: admin
+Priority: optional
+Architecture: all
+Installed-Size: 4
+Maintainer: tkirkland <tony@tonykirkland.net>
+Depends: initramfs-tools, alsa-utils, pipewire-audio, pipewire-pulse, wireplumber, firmware-sof-signed, firmware-intel-sound
+Recommends: libspa-0.2-bluetooth, pulseaudio-utils, pavucontrol
+Description: Audio configuration for the Dell Precision 7780
+ Forces the Intel SOF driver for the Precision 7780 SoundWire audio interface
+ and digital microphone array. The package also pulls in the Debian PipeWire,
+ WirePlumber, ALSA, and Intel SOF firmware packages required by the system.

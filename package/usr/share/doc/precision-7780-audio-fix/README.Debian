@@ -1,0 +1,17 @@
+precision-7780-audio-fix for Debian
+-----------------------------------
+
+This package forces the Intel SOF audio driver on the Dell Precision 7780.
+Dell specifies a SoundWire internal audio interface and dual digital-array
+microphones for this model. Legacy HDA auto-selection can expose an incorrect
+analog internal microphone that returns saturated samples.
+
+Reboot after installing or purging this package. After installation, verify:
+
+  cat /sys/module/snd_intel_dspcfg/parameters/dsp_driver
+  systemctl --user status pipewire pipewire-pulse wireplumber
+  wpctl status
+  speaker-test -D pipewire -c 2 -t wav -l 1
+  arecord -D pipewire -f S16_LE -r 48000 -c 2 -d 5 mic-test.wav
+
+The expected DSP driver value after reboot is 3.
